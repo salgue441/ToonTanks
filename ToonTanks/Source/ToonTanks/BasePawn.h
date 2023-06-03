@@ -60,8 +60,4 @@ private:
 
 	UPROPERTY(EditAnywhere, Category = "Movement")
 		float m_rotate_speed = 100.f;
-
-	// Methods
-	void Move(float value);
-	void Rotate(float value);
 };

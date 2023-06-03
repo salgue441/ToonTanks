@@ -1,4 +1,12 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+/**
+ * @file BasePawn.cpp
+ * @brief This file contains the implementation of the BasePawn class
+ * @author Carlos Salguero
+ * @date 2023-06-02
+ * @version 1.0
+ *
+ * @copyright Copyright (c) 2023 - Carlos Salguero
+ */
 
 #include "BasePawn.h"
 #include "Components/CapsuleComponent.h"
