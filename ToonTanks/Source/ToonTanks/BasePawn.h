@@ -38,5 +38,14 @@ protected:
 
 private:
 	UPROPERTY()
-	class UCapsuleComponent *m_capsule_component;
+		class UCapsuleComponent *m_capsule_component;
+
+	UPROPERTY()
+		UStaticMeshComponent *m_base_mesh;
+
+	UPROPERTY()
+		UStaticMeshComponent *m_turret_mesh;
+
+	UPROPERTY()
+		USceneComponent *m_projectile_spawn_point;
 };

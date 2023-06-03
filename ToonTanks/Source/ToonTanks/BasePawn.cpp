@@ -2,10 +2,15 @@
 
 #include "BasePawn.h"
 #include "Components/CapsuleComponent.h"
+#include "Components/StaticMeshComponent.h"
+#include "Components/SceneComponent.h"
 
 /**
  * @brief 
  * Construct a new ABasePawn::ABasePawn object
+ * Sets default values for this pawn's properties
+ * @details
+ * It also creates the capsule collider, the base mesh, the turret mesh and the projectile spawn point.
  */
 ABasePawn::ABasePawn()
 {
@@ -14,6 +19,18 @@ ABasePawn::ABasePawn()
 	// Capsule collider
 	m_capsule_component = CreateDefaultSubobject<UCapsuleComponent>(TEXT("Capsule Collider"));
 	RootComponent = m_capsule_component;
+
+	// Base mesh
+	m_base_mesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Base Mesh"));
+	m_base_mesh->SetupAttachment(RootComponent);
+
+	// Turret mesh
+	m_turret_mesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Turret Mesh"));
+	m_turret_mesh->SetupAttachment(m_base_mesh);
+
+	// Projectile spawn point
+	m_projectile_spawn_point = CreateDefaultSubobject<USceneComponent>(TEXT("Projectile Spawn Point"));
+	m_projectile_spawn_point->SetupAttachment(m_turret_mesh);
 }
 
 /**
