@@ -1,0 +1,126 @@
+# Unreal Engine 4
+###################
+
+# Visual Studio 2015/2017 cache/options directory
+.vs/
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+*.smod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Unreal Engine 4 intermediate files
+Binaries/
+Intermediate/
+
+# Unreal Engine 4 binary files
+Saved/
+*.pdb
+
+# Unreal Engine 4 build files
+*.sln
+*.suo
+*.sdf
+*.opensdf
+*.bak
+*.bak.*
+*.vcxproj
+*.vcxproj.filters
+*.xcodeproj
+*.xcworkspacedata
+*.xcuserstate
+*.xcuserdata
+*.sdf
+*.bak
+*.bak.*
+*.opensdf
+*.vcxproj
+*.vcxproj.filters
+
+# Visual Studio cache/options directory
+.vs/
+
+# Compiled source files
+*.cubin
+
+# Visual Studio cache directory
+ipch/
+
+# Unreal shader files
+*.usf
+*.ush
+*.usf.*
+
+# Unreal log files
+*.log
+
+# Archive files
+*.7z
+*.rar
+*.zip
+*.gz
+*.gzip
+*.tar
+*.tgz
+*.bzip2
+*.tbz2
+
+# Miscellaneous files
+.DS_Store
+Thumbs.db
+desktop.ini
+*.bak
+
+# Unreal Engine 4 source code files
+Source/*
+
+# User-specific files
+Saved/*
+
+# Build-related files
+Build/*
+
+# Misc
+DerivedDataCache/
+*.tmp
+*.swp
+*.bak
+*.tmp.*
+*.bak.*
+
+# Exclude all recursive .gitignore
+**/.gitignore
+
+# Exclude all recursive .DS_Store
+**/.DS_Store
+
+# Config user files
+**/Config/DefaultEngine.ini
+**/Config/DefaultEditor.ini
+**/Config/DefaultEditorSettings.ini
+**/Config/DefaultEditorPerProjectUserSettings.ini
+**/Config/DefaultGame.ini
+**/Config/DefaultInput.ini
+**/Config/DefaultEngine.ini
+**/Saved/
+
