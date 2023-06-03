@@ -40,6 +40,14 @@ private:
 	UPROPERTY(VisibleAnywhere, Category = "Components")
 		class UCameraComponent* m_camera_component;
 
+	// Variables
+	UPROPERTY(EditAnywhere, Category = "Movement")
+		float m_move_speed = 300.f;
+
+	UPROPERTY(EditAnywhere, Category = "Movement")
+		float m_rotate_speed = 100.f;
+
 	// Methods
 	void move(float);
-};
+	void rotate(float);
+	};

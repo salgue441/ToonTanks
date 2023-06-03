@@ -52,11 +52,4 @@ private:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components",
 		meta = (AllowPrivateAccess = "true"))
 		USceneComponent *m_projectile_spawn_point;
-
-	// Variables
-	UPROPERTY(EditAnywhere, Category = "Movement")
-		float m_move_speed = 100.f;
-
-	UPROPERTY(EditAnywhere, Category = "Movement")
-		float m_rotate_speed = 100.f;
 };
