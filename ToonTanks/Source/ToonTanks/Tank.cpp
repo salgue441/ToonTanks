@@ -21,9 +21,39 @@
  */
 ATank::ATank()
 {
+	// Spring arm component
 	m_spring_arm_component = CreateDefaultSubobject<USpringArmComponent>(TEXT("Spring Arm Component"));
 	m_spring_arm_component->SetupAttachment(RootComponent);
 
+	// Camera component
 	m_camera_component = CreateDefaultSubobject<UCameraComponent>(TEXT("Camera Component"));
 	m_camera_component->SetupAttachment(m_spring_arm_component);
+}
+
+// Methods (Public)
+/**
+ * @brief
+ * Called to bind functionality to input
+ * @param PlayerInputComponent
+ */
+void ATank::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
+{
+	Super::SetupPlayerInputComponent(PlayerInputComponent);
+
+	// Bind axis
+	PlayerInputComponent->BindAxis(TEXT("MoveForward"), this, &ATank::move);
+}
+
+// Methods (Private)
+/**
+ * @brief 
+ * Moves the tank forward or backward
+ * @param value Value to move the tank
+ */
+void ATank::move(float value)
+{
+	FVector delta_location(0.f);
+	delta_location.X = value;
+
+	AddActorLocalOffset(delta_location, true);
 }

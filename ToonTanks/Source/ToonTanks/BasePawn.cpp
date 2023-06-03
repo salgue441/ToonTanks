@@ -58,17 +58,5 @@ void ABasePawn::BeginPlay()
 void ABasePawn::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-
-}
-
-/**
- * @brief
- * Sets up the player input component
- * @param PlayerInputComponent Input component to set up
- */
-void ABasePawn::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
-{
-	Super::SetupPlayerInputComponent(PlayerInputComponent);
-
 }
 

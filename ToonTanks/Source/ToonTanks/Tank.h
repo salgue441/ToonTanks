@@ -29,6 +29,9 @@ public:
 	// Constructor
 	ATank();
 
+	// Methods
+	void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
+
 private:
 	// Components
 	UPROPERTY(VisibleAnywhere, Category = "Components")
@@ -36,4 +39,7 @@ private:
 
 	UPROPERTY(VisibleAnywhere, Category = "Components")
 		class UCameraComponent* m_camera_component;
+
+	// Methods
+	void move(float);
 };
