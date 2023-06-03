@@ -41,22 +41,17 @@ ABasePawn::ABasePawn()
 	m_projectile_spawn_point->SetupAttachment(m_turret_mesh);
 }
 
+// Methods (Protected)
 /**
  * @brief
- * Called when the game starts or when spawned
+ * Rotates the turrent.
+ * @param look_at_target The target to look at.
  */
-void ABasePawn::BeginPlay()
+void ABasePawn::rotate_turret(FVector look_at_target)
 {
-	Super::BeginPlay();
-	
-}
+	FVector to_target = look_at_target - m_turret_mesh->GetComponentLocation();
+	FRotator to_target_rotation = FRotator(0.f, to_target.Rotation().Yaw, 0.f);
 
-/**
- * @brief
- * Called every frame
- */
-void ABasePawn::Tick(float DeltaTime)
-{
-	Super::Tick(DeltaTime);
+	m_turret_mesh->SetWorldRotation(to_target_rotation);
 }
 

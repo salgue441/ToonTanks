@@ -31,6 +31,11 @@ public:
 
 	// Methods
 	void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
+	void Tick(float DeltaTime) override;
+
+protected:
+	// Methods
+	void BeginPlay() override;
 
 private:
 	// Components
@@ -47,7 +52,10 @@ private:
 	UPROPERTY(EditAnywhere, Category = "Movement")
 		float m_rotate_speed = 100.f;
 
+	// References
+	APlayerController* m_player_controller;
+
 	// Methods
 	void move(float);
 	void rotate(float);
-	};
+};

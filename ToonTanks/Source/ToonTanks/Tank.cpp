@@ -11,6 +11,7 @@
 #include "Tank.h"
 #include "Camera/CameraComponent.h"
 #include "GameFramework/SpringArmComponent.h"
+#include "Kismet/GameplayStatics.h"
 
 /**
  * @brief
@@ -43,6 +44,41 @@ void ATank::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 	// Bind axis
 	PlayerInputComponent->BindAxis(TEXT("MoveForward"), this, &ATank::move);
 	PlayerInputComponent->BindAxis(TEXT("Turn"), this, &ATank::rotate);
+}
+
+/**
+ * @brief
+ * Called every frame
+ * @param DeltaTime Delta time
+ * @details Rotate the turret
+ */
+void ATank::Tick(float DeltaTime)
+{
+	Super::Tick(DeltaTime);
+
+	// Rotate the turret
+	if (m_player_controller)
+	{
+		FHitResult hit_result;
+
+		m_player_controller->GetHitResultUnderCursor(
+			ECollisionChannel::ECC_Visibility, false, hit_result);
+
+		rotate_turret(hit_result.ImpactPoint);
+	}
+}
+
+// Methods (Protected)
+/**
+ * @brief
+ * Called when the game starts or when spawned
+ */
+void ATank::BeginPlay()
+{
+	Super::BeginPlay();
+
+	// Player controller
+	m_player_controller = APawn::GetController<APlayerController>();
 }
 
 // Methods (Private)

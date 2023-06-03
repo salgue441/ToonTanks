@@ -29,11 +29,9 @@ public:
 	// Constructor
 	ABasePawn();
 
-	// Methods
-	virtual void Tick(float DeltaTime) override;
-
 protected:
-	virtual void BeginPlay() override;
+	// Methods
+	void rotate_turret(FVector);
 
 private:
 	// Components
